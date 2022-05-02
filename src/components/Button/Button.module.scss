@@ -27,6 +27,12 @@
     margin-left: 8px;
 }
 
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
+}
+
 // Button types
 .rounded {
     border-radius: 999px;
@@ -65,8 +71,6 @@
         text-decoration: underline;
     }
 }
-
-// Disabled
 
 // Button sizes
 .small {
