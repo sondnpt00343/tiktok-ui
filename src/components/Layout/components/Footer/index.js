@@ -78,7 +78,7 @@ const Footer = () => {
             <div className={cx('bottom-footer')}>
                 <div className={cx('left')}>
                     <a href="#">
-                        <img src={Pay} />
+                        <img src={Pay} alt="" />
                     </a>
                 </div>
                 <div className={cx('right')}>

@@ -42,10 +42,10 @@
                 &:hover {
                     color: green;
                 }
-            }
-            span {
-                font-size: 3.5rem;
-                margin-right: 5px;
+                span {
+                    font-size: 3.5rem;
+                    margin-right: 5px;
+                }
             }
         }
         .login {
@@ -89,6 +89,105 @@
             position: absolute;
             right: 0;
             top: 0;
+        }
+    }
+    .menu_icon {
+        display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container-fluid {
+        padding: 0 2rem;
+        .nav {
+            .avt {
+                z-index: 2;
+                font-size: small;
+            }
+            .content {
+                display: none;
+            }
+            .guide {
+                display: none;
+            }
+            .login {
+                display: none;
+            }
+            .signup {
+                display: none;
+            }
+        }
+        .img {
+            z-index: 1;
+            opacity: 0.3;
+        }
+        .menu_icon {
+            display: block;
+            z-index: 2;
+            color: white;
+        }
+    }
+}
+@media only screen and (max-width: 900px) {
+    .container-fluid {
+        padding: 0 2rem;
+        .nav {
+            .avt {
+                z-index: 2;
+                font-size: small;
+            }
+            .content {
+            }
+            .guide {
+                display: none;
+            }
+            .login {
+                display: none;
+            }
+            .signup {
+                display: none;
+            }
+        }
+        .img {
+            z-index: 1;
+            opacity: 0.3;
+        }
+        .menu_icon {
+            display: block;
+            z-index: 2;
+            color: white;
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .container-fluid {
+        .nav {
+            z-index: 2;
+            width: 1000px;
+            justify-content: space-between;
+            .avt {
+                padding-right: 10rem;
+                margin-right: 3rem;
+            }
+            .guide {
+                display: none;
+            }
+            .login {
+                margin-top: 0px;
+                button {
+                    width: 70%;
+                }
+            }
+            .signup {
+                margin-top: 0px;
+                margin-right: 1rem;
+                button {
+                    width: 70%;
+                }
+            }
+        }
+        .img {
+            z-index: 1;
+            opacity: 0.3;
         }
     }
 }

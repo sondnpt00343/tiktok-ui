@@ -9,6 +9,7 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Login from './Login';
+import MenuIcon from '@mui/icons-material/Menu';
 const cx = classNames.bind(styles);
 const style = {
     position: 'absolute',
@@ -79,6 +80,9 @@ const Header = () => {
             <div className={cx('img')}>
                 <img src="https://www.mioto.vn/static/media/left.64347807.svg" alt="" />
                 <img src="https://www.mioto.vn/static/media/right.cb9f81e8.svg" alt="" />
+            </div>
+            <div className={cx('menu_icon')}>
+                <MenuIcon fontSize='large'/>
             </div>
         </div>
     );

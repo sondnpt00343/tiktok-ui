@@ -1,28 +1,40 @@
 import React from 'react';
 import styles from './Banner.scss';
 import classNames from 'classnames/bind';
-import Typography from '@mui/material/Typography';
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
-import Fade from '@mui/material/Fade';
-import CardModal from './CardModal';
+import { Typography, Button, ButtonGroup } from '@mui/material';
+import ModalBox from '~/GlobalComponents/StyleComponents/Modal/Modal';
+
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 385,
+    width: '50%',
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
+    padding: 0,
     p: 4,
 };
 const cx = classNames.bind(styles);
 export const Banner = () => {
+    //! State
+    const data = [
+        'Với thiết kế trẻ trung, trang bị hiện đại cùng khả năng vận hành ổn định, Hyundai Accent luôn là dòng xe đô thị được nhiều khách hàng lựa chọn',
+        'Cùng trải nghiệm những mẫu xe Hyundai Accent mới và đẹp nhất trên Mioto.',
+        'Đặc biệt, từ ngày 30/5 đến hết ngày 12/6/2022, khi nhập mã ACCENT, quý khách sẽ tiết kiệm ngay 15% (tối đa 150k) khi thuê xe Hyundai Accent tại Mioto.',
+    ];
+    const Dumydata = {
+        id: 0,
+        img: 'https://www.mioto.vn/static/media/banner_insurance.c636e2d8.png',
+        title: 'BẢO HIỂM CHUYẾN ĐI',
+        detail: 'Nhằm nâng cao trải nghiệm an toàn và giảm thiểu tổn thất có thể xảy ra do rủi ro trong quá trình thuê xe, Mioto kết hợp với Bảo hiểm MIC và Bảo hiểm PJICO triển khai sản phẩm BẢO HIỂM CHUYẾN ĐI, dành riêng cho các giao dịch thuê xe tự lái trên Mioto.',
+    };
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    //! Render
     return (
         <div className={cx('banner')}>
             <Typography
@@ -34,57 +46,57 @@ export const Banner = () => {
             >
                 MIOTO - CÙNG BẠN TRÊN MỌI HÀNH TRÌNH
             </Typography>
-            <div className={cx('rent-car')}>
-                <div className={cx('modal')} onClick={handleOpen}>
-                    <img src="https://n1-cstg.mioto.vn/g/2022/04/01/00/LSJKSAQB.jpg" alt="" />
-                </div>
-                <Modal
-                    aria-labelledby="transition-modal-title"
-                    aria-describedby="transition-modal-description"
+            <Button onClick={handleOpen} className={cx('sale_car')}>
+                <img src="https://n1-cstg.mioto.vn/g/2022/05/06/01/K5SEZ4UG.jpg" alt="" />
+            </Button>
+            <div>
+                <ModalBox
+                    img="https://n1-cstg.mioto.vn/g/2022/05/06/01/K8CWQ4N7.jpg"
+                    title="VỮNG TAY TỰ LÁI CÙNG MÃ ACCENT - GIẢM NGAY 15% KHI THUÊ XE HYUNDAI ACCENT TRÊN MIOTO"
+                    detail={data}
                     open={open}
-                    onClose={handleClose}
-                    closeAfterTransition
-                    BackdropComponent={Backdrop}
-                    BackdropProps={{
-                        timeout: 500,
-                    }}
-                >
-                    <Fade in={open}>
-                        <Box sx={style}>
-                            <CardModal/>
-                        </Box>
-                    </Fade>
-                </Modal>
-
-                <div className={cx('protect')}>
-                    <Typography variant="h5" display="block" align="center" sx={{ fontWeight: 'bold' }}>
-                        ĐỐI TÁC BẢO HIỂM
-                    </Typography>
-                    <div className={cx('box')}>
-                        <div class="partner-logo__image">
-                            <img
-                                class="img-fluid"
-                                src="https://www.mioto.vn/static/media/global-care.a539f2c6.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="partner-logo__image">
-                            <img
-                                class="img-fluid second"
-                                src="https://www.mioto.vn/static/media/mic.ff5e2ba2.png"
-                                alt=""
-                            />
-                        </div>
-                        <div class="partner-logo__image">
-                            <img
-                                class="img-fluid"
-                                src="https://www.mioto.vn/static/media/l_pjico.398ce6c5.png"
-                                alt=""
-                            />
-                        </div>
-                        {/* <img src="https://www.mioto.vn/static/media/mic.ff5e2ba2.png" alt="" />
-                        <img src="https://www.mioto.vn/static/media/l_pjico.398ce6c5.png" alt="" /> */}
-                    </div>
+                    handleClose={handleClose}
+                    style={style}
+                />
+            </div>
+            <div className={cx('lastItemBanner')}>
+                <p className={cx('title')}>ĐỐI TÁC BẢO HIỂM</p>
+                <div className={cx('group-button')}>
+                    <ButtonGroup variant="text" className={cx('group')}>
+                        <Button sx={{ width: '25%' }} onClick={handleOpen}>
+                            <img src="https://www.mioto.vn/static/media/global-care.a539f2c6.png" alt="" />
+                        </Button>
+                        <ModalBox
+                            img={Dumydata.img}
+                            title={Dumydata.title}
+                            detail={Dumydata.detail}
+                            open={open}
+                            handleClose={handleClose}
+                            style={style}
+                        />
+                        <Button sx={{ width: '25%' }} onClick={handleOpen}>
+                            <img src="https://www.mioto.vn/static/media/l_pjico.398ce6c5.png" alt="" />
+                        </Button>
+                        <ModalBox
+                            img={Dumydata.img}
+                            title={Dumydata.title}
+                            detail={Dumydata.detail}
+                            open={open}
+                            handleClose={handleClose}
+                            style={style}
+                        />
+                        <Button sx={{ width: '25%' }} onClick={handleOpen}>
+                            <img src="https://www.mioto.vn/static/media/global-care.a539f2c6.png" alt="" />
+                        </Button>
+                        <ModalBox
+                            img={Dumydata.img}
+                            title={Dumydata.title}
+                            detail={Dumydata.detail}
+                            open={open}
+                            handleClose={handleClose}
+                            style={style}
+                        />
+                    </ButtonGroup>
                 </div>
             </div>
         </div>

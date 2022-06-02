@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 import Header from '~/components/Layout/components/Header';
 import styles from './DefaultLayout.module.scss';
 import Footer from '~/components/Layout/components/Footer';
-import Container from '@mui/material/Container';
 
 const cx = classNames.bind(styles);
 
