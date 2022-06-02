@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://www.mioto.vn/static/media/bg-main.ee3aedfb.jpg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .rent-car {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .modal {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            img {
+                transform: scale(0.5);
+            }
+        }
+        .protect {
+            position: absolute;
+            bottom: -75px;
+            padding: 0.75rem 2rem 0;
+            background: #fff;
+            border-radius: 30px;
+            z-index: 1;
+            height: 140px;
+            width: 40vw;
+            .box {
+                width: 38vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .partner-logo__image {
+                    position: relative;
+                    padding: 0 9px;
+                    max-width: 140px;
+                    .img-fluid {
+                        max-width: 100%;
+                        height: auto;
+                        cursor: pointer;
+                    }
+                    .second {
+                        margin: 0 10px;
+                        border-left: 1px solid #6e6e6e;
+                        border-right: 1px solid #6e6e6e;
+                    }
+                }
+            }
+        }
+    }
+}

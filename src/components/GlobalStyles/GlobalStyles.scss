@@ -38,7 +38,6 @@ input,
 }
 
 a[href] {
-    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -71,7 +70,7 @@ a[href] {
 body {
     .tippy-box {
         border-radius: 8px;
-        font-weight: 600;
+        font-weight: 400;
         font-size: 1.6rem;
         line-height: 2.2rem;
         background-color: rgba(84, 84, 84, 0.92);

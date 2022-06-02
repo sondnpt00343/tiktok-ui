@@ -1,148 +1,87 @@
-import classNames from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleQuestion,
-    faCoins,
-    faEarthAsia,
-    faEllipsisVertical,
-    faGear,
-    faKeyboard,
-    faSignOut,
-    faUser,
-} from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
-
-import Button from '~/components/Button';
+import React from 'react';
+import './Header.module.scss';
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import GroupIcon from '@mui/icons-material/Group';
 import styles from './Header.module.scss';
-import images from '~/assets/images';
-import Menu from '~/components/Popper/Menu';
-import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
-import Image from '~/components/Image';
-import Search from '../Search';
-
+import classNames from 'classnames/bind';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Login from './Login';
 const cx = classNames.bind(styles);
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 550,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+};
 
-const MENU_ITEMS = [
-    {
-        icon: <FontAwesomeIcon icon={faEarthAsia} />,
-        title: 'English',
-        children: {
-            title: 'Language',
-            data: [
-                {
-                    type: 'language',
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    type: 'language',
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-            ],
-        },
-    },
-    {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
-        title: 'Feedback and help',
-        to: '/feedback',
-    },
-    {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
-        title: 'Keyboard shortcuts',
-    },
-];
-
-function Header() {
-    const currentUser = true;
-
-    // Handle logic
-    const handleMenuChange = (menuItem) => {
-        switch (menuItem.type) {
-            case 'language':
-                // Handle change language
-                break;
-            default:
-        }
-    };
-
-    const userMenu = [
-        {
-            icon: <FontAwesomeIcon icon={faUser} />,
-            title: 'View profile',
-            to: '/@hoaa',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faCoins} />,
-            title: 'Get coins',
-            to: '/coin',
-        },
-        {
-            icon: <FontAwesomeIcon icon={faGear} />,
-            title: 'Settings',
-            to: '/settings',
-        },
-        ...MENU_ITEMS,
-        {
-            icon: <FontAwesomeIcon icon={faSignOut} />,
-            title: 'Log out',
-            to: '/logout',
-            separate: true,
-        },
-    ];
-
+const Header = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
-        <header className={cx('wrapper')}>
-            <div className={cx('inner')}>
-                <img src={images.logo} alt="Tiktok" />
-
-                <Search />
-
-                <div className={cx('actions')}>
-                    {currentUser ? (
-                        <>
-                            <Tippy delay={[0, 50]} content="Upload video" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <UploadIcon />
-                                </button>
-                            </Tippy>
-                            <Tippy delay={[0, 50]} content="Message" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <MessageIcon />
-                                </button>
-                            </Tippy>
-                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
-                                <button className={cx('action-btn')}>
-                                    <InboxIcon />
-                                    <span className={cx('badge')}>12</span>
-                                </button>
-                            </Tippy>
-                        </>
-                    ) : (
-                        <>
-                            <Button text>Upload</Button>
-                            <Button primary>Log in</Button>
-                        </>
-                    )}
-
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
-                        {currentUser ? (
-                            <Image
-                                className={cx('user-avatar')}
-                                src="https://files.fullstack.edu.vn/f8-prod/user_avatars/1/623d4b2d95cec.png"
-                                alt="Nguyen Van A"
-                            />
-                        ) : (
-                            <button className={cx('more-btn')}>
-                                <FontAwesomeIcon icon={faEllipsisVertical} />
-                            </button>
-                        )}
-                    </Menu>
+        <div className={cx('container-fluid')}>
+            <div className={cx('nav')}>
+                <a className={cx('avt')} href="/"></a>
+                <div className={cx('content')}>
+                    <a href="tel:19009217">
+                        <span>
+                            <CallOutlinedIcon fontSize="large" sx={{ marginBottom: '-5px' }} />
+                        </span>
+                        1900 9217
+                    </a>
+                    <a>
+                        <span>
+                            <MailOutlineIcon fontSize="large" sx={{ marginBottom: '-5px' }} />
+                        </span>
+                        contact@mioto.vn
+                    </a>
+                    <a href="https://www.messenger.com/t/mioto.vn">
+                        <span>
+                            <GroupIcon fontSize="large" sx={{ marginBottom: '-5px' }} />
+                        </span>
+                        Facebook
+                    </a>
+                </div>
+                <div className={cx('guide')}>
+                    <a href="/howitwork">
+                        <span>
+                            <ErrorOutlineIcon fontSize="large" sx={{ marginBottom: '-5px' }} />
+                        </span>
+                        Hướng dẫn
+                    </a>
+                </div>
+                <div className={cx('login')}>
+                    <button onClick={handleOpen}>Đăng nhập</button>
+                    <Modal
+                        keepMounted
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="keep-mounted-modal-title"
+                        aria-describedby="keep-mounted-modal-description"
+                    >
+                        <Box sx={style}>
+                            <Login />
+                        </Box>
+                    </Modal>
+                </div>
+                <div className={cx('signup')}>
+                    <button>Đăng kí</button>
                 </div>
             </div>
-        </header>
+            <div className={cx('img')}>
+                <img src="https://www.mioto.vn/static/media/left.64347807.svg" alt="" />
+                <img src="https://www.mioto.vn/static/media/right.cb9f81e8.svg" alt="" />
+            </div>
+        </div>
     );
-}
+};
 
 export default Header;
