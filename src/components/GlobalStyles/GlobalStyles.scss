@@ -39,24 +39,9 @@ html *::-webkit-scrollbar {
     width: 8px;
 }
 
-html *::-webkit-scrollbar {
-    border-radius: 0;
-    width: 8px;
-}
-
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0, 0, 0, 0.15);
-}
-
-html *::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.15);
-}
-
-html *::-webkit-scrollbar-track {
-    border-radius: 0;
-    background-color: rgba(0, 0, 0, 0);
 }
 
 html *::-webkit-scrollbar-track {
@@ -71,7 +56,7 @@ input,
     border: none;
 }
 
-a[href] {
+a {
     color: var(--text-color);
     text-decoration: none;
 }
