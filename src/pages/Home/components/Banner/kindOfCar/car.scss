@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container_car {
+    display: flex;
+    width: 100%;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.35);
+    margin-bottom: 3rem;
+    border-radius: 3px;
+    color: white;
+    font-size: large;
+    .swicth_type_car {
+        border-right: 3px solid white;
+        font-size: large;
+        .auto_car {
+            position: relative;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 15px;
+            padding: 1rem 3rem;
+            background: rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            .auto_car_icon {
+                font-size: 6rem;
+            }
+        }
+        .normal_car {
+            position: relative;
+            text-align: center;
+            cursor: pointer;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 5px;
+            padding: 1rem 3rem;
+            background: rgba(0, 0, 0, 0.7);
+            transition: 0.3s ease-in-out;
+            .normal_car_icon {
+                font-size: 6rem;
+            }
+        }
+    }
+    .location {
+        width: 100%;
+        padding-top: 2rem;
+        padding: 2rem 2rem 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container_car {
+        flex-direction: column;
+        font-size: medium;
+        .swicth_type_car {
+            border: none;
+            display: flex;
+            width: 100%;
+            .auto_car {
+                width: 50%;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding: 1rem 1rem;
+                .auto_car_icon {
+                    font-size: 4rem;
+                }
+                .auto_car_text {
+                }
+            }
+            .normal_car {
+                width: 50%;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding: 1rem 0rem;
+                .normal_car_icon {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 900px) {
+    .container_car {
+        flex-direction: column;
+        font-size: medium;
+        .swicth_type_car {
+            border: none;
+            display: flex;
+            width: 100%;
+            .auto_car {
+                width: 50%;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding: 1rem 1rem;
+                .auto_car_icon {
+                    font-size: 4rem;
+                }
+                .auto_car_text {
+                }
+            }
+            .normal_car {
+                width: 50%;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding: 1rem 0rem;
+                .normal_car_icon {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}

@@ -3,15 +3,14 @@ import styles from './Banner.scss';
 import classNames from 'classnames/bind';
 import { Typography, Button, ButtonGroup } from '@mui/material';
 import ModalBox from '~/GlobalComponents/StyleComponents/Modal/Modal';
-import KindOfCar from '../../index';
-
+import KindOfCar from './kindOfCar';
 //! Function
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '50%',
+    width: '40%',
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -45,7 +44,6 @@ export const Banner = () => {
                     sx={{
                         mt: 10,
                         fontSize: '4rem',
-                        width: '50vw',
                         fontWeight: 'bolder',
                         color: 'rgb(75, 77, 82)',
                     }}
@@ -53,7 +51,9 @@ export const Banner = () => {
                     MIOTO - CÙNG BẠN TRÊN MỌI HÀNH TRÌNH
                 </Typography>
                 <KindOfCar />
-                <img src="https://n1-cstg.mioto.vn/g/2022/05/06/01/K5SEZ4UG.jpg" alt="" />
+                <div className={cx('img_banner')}>
+                    <img src="https://n1-cstg.mioto.vn/g/2022/05/06/01/K5SEZ4UG.jpg" alt="" />
+                </div>
                 <div className={cx('lastItemBanner')}>
                     <p className={cx('title')}>ĐỐI TÁC BẢO HIỂM</p>
                     <div className={cx('group-button')}>

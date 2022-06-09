@@ -1,0 +1,63 @@
+.container_tag {
+    margin-bottom: 2rem;
+    .city_input {
+        border-bottom: 2px solid white;
+        input {
+            color: white;
+            font-size: medium;
+        }
+        .icon {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.start {
+    display: flex;
+
+    .start_input {
+        border-bottom: 2px solid white;
+        margin: 0 1rem;
+        input {
+            color: white;
+            font-size: medium;
+        }
+        input[type='date']::-webkit-calendar-picker-indicator {
+            color: white;
+        }
+        .icon {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+.end_text {
+    margin-top: 2rem;
+}
+.end {
+    display: flex;
+
+    .end_input {
+        border-bottom: 2px solid white;
+        margin: 0 1rem;
+        input {
+            color: white;
+            font-size: medium;
+        }
+        input[type='date']::-webkit-calendar-picker-indicator {
+            color: white;
+        }
+        .icon {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+.button_auto_search{
+    color: white;
+    background: black;
+}

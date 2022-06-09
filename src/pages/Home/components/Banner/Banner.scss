@@ -11,15 +11,19 @@
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 110vh;
     .container_banner {
         width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        img {
+        .img_banner {
+            margin-bottom: 12rem;
             width: 60%;
+            img {
+                width: 100%;
+            }
         }
+
         .lastItemBanner {
             position: absolute;
             bottom: -75px;
@@ -43,6 +47,98 @@
                     align-items: center;
                     img {
                         width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .banner {
+        width: 100%;
+        .container_banner {
+            width: 100%;
+            .img_banner {
+                margin-bottom: 12rem;
+                width: 70%;
+            }
+
+            .lastItemBanner {
+                text-align: center;
+                width: 100%;
+                bottom: -35px;
+                padding: 0.5rem 1rem 0;
+                .title {
+                    color: #000000;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    margin-bottom: 5px;
+                }
+                .group-button {
+                    width: 100%;
+                    .group {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 900px) {
+    .banner {
+        .container_banner {
+            width: 80%;
+            .img_banner {
+                margin-bottom: 12rem;
+                width: 60%;
+            }
+
+            .lastItemBanner {
+                text-align: center;
+                width: 70%;
+                bottom: -65px;
+                padding: 0.5rem 0rem 0;
+                .title {
+                    color: #000000;
+                    font-weight: 700;
+                    font-size: 1.8rem;
+                    margin-bottom: 5px;
+                }
+                .group-button {
+                    width: 100%;
+                    .group {
+                        img {
+                            width: 60%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .banner {
+        .container_banner {
+            width: 70%;
+            .img_banner {
+                width: 40%;
+            }
+
+            .lastItemBanner {
+                width: 50%;
+                bottom: -35px;
+                padding: 0.5rem 1rem 0;
+                .title {
+                    font-size: 1.2rem;
+                }
+                .group-button {
+                    width: 100%;
+                    .group {
+                        img {
+                            width: 70%;
+                        }
                     }
                 }
             }
